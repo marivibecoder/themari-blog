@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Últimamente siento que la AI me usa a mí · the mari blog</title>
+<link rel="stylesheet" href="/assets/fonts.css">
+<style>
+:root {
+  --paper: #FFFFFF; --ink: #1A1A1A; --soft: #6E6E6E;
+  --yellow: #FFD139; --yellow-dark: #DFAF1E;
+  --keycap: #F6F5F1; --keycap-edge: #D5D3CB;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #17181A; --ink: #F2F0E9; --soft: #9A9A94; --keycap: #292A2E; --keycap-edge: #101113; }
+}
+:root[data-theme="light"] { --paper: #FFFFFF; --ink: #1A1A1A; --soft: #6E6E6E; --keycap: #F6F5F1; --keycap-edge: #D5D3CB; }
+:root[data-theme="dark"] { --paper: #17181A; --ink: #F2F0E9; --soft: #9A9A94; --keycap: #292A2E; --keycap-edge: #101113; }
+* { box-sizing: border-box; }
+html { background: var(--paper); }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: 'Roboto Mono', ui-monospace, monospace; font-size: 15px; line-height: 1.8;
+}
+.wrap { max-width: 680px; margin: 0 auto; padding: 30px 24px 90px; }
+.back {
+  display: inline-block; text-decoration: none; color: var(--ink);
+  font-size: 13px; padding: 8px 16px 10px; border-radius: 6px;
+  background: var(--keycap); box-shadow: 0 4px 0 var(--keycap-edge);
+  transition: transform .06s ease, box-shadow .06s ease;
+}
+.back:hover { transform: translateY(-1px); }
+.back:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--keycap-edge); }
+h1 {
+  font-family: 'Gochi Hand', 'Chalkboard SE', cursive; font-weight: 400;
+  font-size: clamp(34px, 6vw, 46px); line-height: 1.15; margin: 44px 0 6px;
+  text-wrap: balance; transform: rotate(-0.5deg);
+}
+.meta { color: var(--soft); font-size: 12.5px; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 40px; }
+.meta .hl { background: linear-gradient(transparent 55%, var(--yellow) 55%, var(--yellow) 92%, transparent 92%); color: var(--ink); padding: 0 2px; }
+article p { margin: 0 0 1.25em; }
+footer { margin-top: 70px; color: var(--soft); font-size: 12.5px; }
+a:focus-visible { outline: 2.5px solid var(--yellow-dark); outline-offset: 3px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="/#blog">&larr; blog</a>
+  <h1>Últimamente siento que la AI me usa a mí</h1>
+  <p class="meta">mar 2026 · <span class="hl">publicado en LinkedIn</span></p>
+  <article>
+    <p>Últimamente siento que la AI me usa a mí. No al revés.</p>
+    <p>Hace poco hice una herramienta de PTO para mi empresa. Sin escribir código. Con Claude.</p>
+    <p>Yo le describía el problema. La AI proponía la solución. Yo decía &quot;dale&quot;. La AI lo ejecutaba.</p>
+    <p>Y no solo eso. Sus ideas eran mejores que las mías. Por lejos.</p>
+    <p>En algún momento pasé de ser la que dirige a ser la que aprueba.</p>
+    <p>Y es raro. Porque el producto salió. Funciona. Mejor de lo que hubiera hecho sola.</p>
+    <p>Pero hay una vocecita que dice: &quot;y tu qué aportaste realmente?&quot;</p>
+    <p>No sé si es síndrome del impostor 2.0 o si es una señal de que algo está cambiando en cómo trabajamos.</p>
+    <p>Lo que sí sé:<br>
+→ Mi valor ya no es saber hacer. Es saber qué hacer.<br>
+→ La AI ejecuta. Yo decido qué vale la pena ejecutar.<br>
+→ El trabajo no desaparece. Se mueve. Del &quot;cómo&quot; al &quot;qué&quot; y al &quot;para qué&quot;.</p>
+    <p>Si tu valor ya no está en lo que sabes hacer... en qué está?</p>
+  </article>
+  <footer>© 2026 Mari · hand-drawn on the internet</footer>
+</div>
+</body>
+</html>

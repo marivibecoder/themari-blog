@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Las metodologías no te van a salvar · the mari blog</title>
+<link rel="stylesheet" href="/assets/fonts.css">
+<style>
+:root {
+  --paper: #FFFFFF; --ink: #1A1A1A; --soft: #6E6E6E;
+  --yellow: #FFD139; --yellow-dark: #DFAF1E;
+  --keycap: #F6F5F1; --keycap-edge: #D5D3CB;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #17181A; --ink: #F2F0E9; --soft: #9A9A94; --keycap: #292A2E; --keycap-edge: #101113; }
+}
+:root[data-theme="light"] { --paper: #FFFFFF; --ink: #1A1A1A; --soft: #6E6E6E; --keycap: #F6F5F1; --keycap-edge: #D5D3CB; }
+:root[data-theme="dark"] { --paper: #17181A; --ink: #F2F0E9; --soft: #9A9A94; --keycap: #292A2E; --keycap-edge: #101113; }
+* { box-sizing: border-box; }
+html { background: var(--paper); }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: 'Roboto Mono', ui-monospace, monospace; font-size: 15px; line-height: 1.8;
+}
+.wrap { max-width: 680px; margin: 0 auto; padding: 30px 24px 90px; }
+.back {
+  display: inline-block; text-decoration: none; color: var(--ink);
+  font-size: 13px; padding: 8px 16px 10px; border-radius: 6px;
+  background: var(--keycap); box-shadow: 0 4px 0 var(--keycap-edge);
+  transition: transform .06s ease, box-shadow .06s ease;
+}
+.back:hover { transform: translateY(-1px); }
+.back:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--keycap-edge); }
+h1 {
+  font-family: 'Gochi Hand', 'Chalkboard SE', cursive; font-weight: 400;
+  font-size: clamp(34px, 6vw, 46px); line-height: 1.15; margin: 44px 0 6px;
+  text-wrap: balance; transform: rotate(-0.5deg);
+}
+.meta { color: var(--soft); font-size: 12.5px; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 40px; }
+.meta .hl { background: linear-gradient(transparent 55%, var(--yellow) 55%, var(--yellow) 92%, transparent 92%); color: var(--ink); padding: 0 2px; }
+article p { margin: 0 0 1.25em; }
+footer { margin-top: 70px; color: var(--soft); font-size: 12.5px; }
+a:focus-visible { outline: 2.5px solid var(--yellow-dark); outline-offset: 3px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="/#blog">&larr; blog</a>
+  <h1>Las metodologías no te van a salvar</h1>
+  <p class="meta">mar 2026 · <span class="hl">publicado en LinkedIn</span></p>
+  <article>
+    <p>Las metodologías no te van a salvar.</p>
+    <p>He visto de todo: equipos que implementan EOS, OKRs, Scrum, SAFe... etc.</p>
+    <p>Y sí, las metodologías sirven. Te dan estructura, foco, un lenguaje común. Pero hay algo que para mi cada vez es más evidente: seguirlas al pie de la letra puede ser tan peligroso como no tener ninguna.</p>
+    <p>Lo veo mucho en startups:<br>
+Definen objetivos para el trimestre. El equipo se enfoca. Todo va bien. Pero a las 3 semanas el mercado se mueve, sale algo nuevo, un cliente pide algo que no estaba en el plan... y la respuesta es &quot;no podemos, estamos enfocados en los objetivos del Q.&quot;</p>
+    <p>Técnicamente correcto. Pero en un ambiente donde las cosas cambian cada semana, atarte 100% al plan del trimestre es como seguir un mapa de hace 3 meses en una ciudad que se reconstruye todos los días.</p>
+    <p>Lo que fui aprendiendo hablando con founders y líderes de operaciones:</p>
+    <p>→ Las metodologías son herramientas, no religiones. El día que la sigues sin cuestionar, dejó de servirte.</p>
+    <p>→ Lo que funciona con 10 personas te puede matar con 50. Y lo que funciona en SaaS tradicional puede no servir en AI donde todo se mueve el doble de rápido.</p>
+    <p>→ El framework perfecto no existe. Lo que sí existe es un equipo con criterio para saber cuándo seguir el proceso y cuándo romperlo.</p>
+    <p>Los mejores equipos que conozco agarran pedazos de cada metodología, arman algo propio, y no les da culpa saltearse una regla si el contexto lo pide.</p>
+    <p>La metodología que mejor funciona es la que tu equipo puede adaptar sin sentir que está haciendo trampa.</p>
+    <p>Tu empresa sigue alguna metodología al pie de la letra o la fueron adaptando? Me da curiosidad</p>
+  </article>
+  <footer>© 2026 Mari · hand-drawn on the internet</footer>
+</div>
+</body>
+</html>
