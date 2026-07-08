@@ -11,7 +11,7 @@ TEMPLATE = """<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{title} · the mari blog</title>
+<title>{title} · mari</title>
 <link rel="stylesheet" href="/assets/fonts.css">
 <style>
 :root {{
