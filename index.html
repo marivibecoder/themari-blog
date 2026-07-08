@@ -188,6 +188,12 @@ ul.plain .arrow { color: var(--yellow-text); flex: none; font-weight: 500; }
 }
 .chip.yellow { background: var(--yellow); color: #1A1A1A; box-shadow: 0 3px 0 var(--yellow-dark); }
 
+/* ---------- doodle rain easter egg ---------- */
+#doodleRain { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 60; color: var(--ink); }
+#doodleRain .drop { position: absolute; top: -70px; animation: doodle-fall linear forwards; }
+#doodleRain .drop svg { display: block; width: 100%; height: auto; }
+@keyframes doodle-fall { to { transform: translateY(115vh) rotate(340deg); } }
+
 /* ---------- coming soon (vibecoded) ---------- */
 .soon-wrap { text-align: center; padding: 76px 0 40px; color: var(--ink); }
 .soon-title { font-family: 'Gochi Hand', cursive; font-size: clamp(36px, 6vw, 48px); margin: 0 0 30px; transform: rotate(-1deg); }
@@ -472,7 +478,7 @@ const I18N = {
     'foot.erase': 'Erase',
     'foot.hiH': 'say hi', 'foot.hiSub': 'I answer faster than customer support.',
     'foot.copy': '© 2026 Mari · hand-drawn on the internet',
-    'bubble': 'nothing here yet. I just liked the button.'
+    'bubble': 'you found the useless button. now it rains doodles.'
   },
   es: {
     'nav.about': 'sobre mí', 'nav.blog': 'blog', 'nav.vibecoded': 'vibecoded', 'nav.bookshelf': 'biblioteca',
@@ -498,7 +504,7 @@ const I18N = {
     'foot.erase': 'Borrar',
     'foot.hiH': 'saluda', 'foot.hiSub': 'respondo más rápido que customer support.',
     'foot.copy': '© 2026 Mari · hecho a mano en internet',
-    'bubble': 'aquí no hay nada todavía. solo me gustó el botón.'
+    'bubble': 'encontraste el botón inútil. ahora llueven doodles.'
   }
 };
 function setLang(lang) {
@@ -520,12 +526,36 @@ let savedLang = null;
 try { savedLang = localStorage.getItem('lang'); } catch (e) {}
 setLang(savedLang || ((navigator.language || 'en').toLowerCase().startsWith('es') ? 'es' : 'en'));
 
-// help bubble
+// help bubble + doodle rain easter egg
 const helpKey = document.getElementById('helpKey');
 const helpBubble = document.getElementById('helpBubble');
+const DOODLES = [
+  '<svg viewBox="0 0 50 48"><path d="M25 2 L31 18 L48 19 L35 30 L40 46 L25 37 L10 46 L15 30 L2 19 L19 18 Z" fill="var(--yellow)" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
+  '<svg viewBox="0 0 50 44" fill="none" stroke="var(--pink)" stroke-width="2.4" stroke-linejoin="round"><path d="M25 40 C 5 25, 8 6, 25 15 C 42 6, 45 25, 25 40 Z"/></svg>',
+  '<svg viewBox="0 0 52 46" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M8 14 h26 v20 q0 5 -5 5 h-16 q-5 0 -5 -5 z"/><path d="M34 18 q10 -2 8 8 q-2 8 -10 5"/><path d="M15 8 q3 -3 0 -7 M25 8 q3 -3 0 -7"/></svg>',
+  '<svg viewBox="0 0 50 46" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="25" cy="17" r="11"/><path d="M20 31 h10 M21 36 h8"/><path d="M6 8 l5 4 M44 8 l-5 4"/></svg>',
+  '<svg viewBox="0 0 58 28" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="15" cy="15" r="9"/><circle cx="43" cy="15" r="9"/><path d="M24 14 q5 -5 10 0 M6 12 l-4 -5 M52 12 l4 -5"/></svg>'
+];
+function doodleRain() {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let c = document.getElementById('doodleRain');
+  if (!c) { c = document.createElement('div'); c.id = 'doodleRain'; c.setAttribute('aria-hidden', 'true'); document.body.appendChild(c); }
+  for (let i = 0; i < 18; i++) {
+    const d = document.createElement('span');
+    d.className = 'drop';
+    d.innerHTML = DOODLES[Math.floor(Math.random() * DOODLES.length)];
+    d.style.left = (Math.random() * 96) + '%';
+    d.style.width = (20 + Math.random() * 26) + 'px';
+    d.style.animationDuration = (2.2 + Math.random() * 2.6) + 's';
+    d.style.animationDelay = (Math.random() * 0.7) + 's';
+    d.addEventListener('animationend', () => d.remove());
+    c.appendChild(d);
+  }
+}
 helpKey.addEventListener('click', () => {
   const open = helpBubble.classList.toggle('open');
   helpKey.setAttribute('aria-expanded', String(open));
+  doodleRain();
 });
 
 // doodle pad
