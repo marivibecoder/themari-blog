@@ -1,6 +1,7 @@
 ---
 slug: empezar-a-trabajar-joven
 title: La mejor carrera universitaria es empezar a trabajar
+category: carrera
 date: sep 2025
 order: 14
 excerpt: Me gradué del colegio a los 16 en Caracas y a los pocos meses ya estaba en Buenos Aires.

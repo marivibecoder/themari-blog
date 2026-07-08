@@ -1,6 +1,7 @@
 ---
 slug: let-them
 title: Let them
+category: mindset
 date: mar 2026
 order: 7
 excerpt: Cuantas decisiones has dejado de tomar por miedo a lo que van a pensar los demás?

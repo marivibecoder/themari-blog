@@ -1,6 +1,7 @@
 ---
 slug: carrera-zigzag
 title: Operations → Product → Operations → Chief of Staff
+category: carrera
 date: mar 2026
 order: 8
 excerpt: Si tu carrera tampoco tiene sentido lineal, tal vez no es un bug. Es una feature.

@@ -1,6 +1,7 @@
 ---
 slug: que-carajo-hace-un-chief-of-staff
 title: Qué carajo hace un Chief of Staff?
+category: chief of staff
 date: sep 2025
 order: 13
 excerpt: Eres la persona que resuelve lo que nadie más puede (o quiere) resolver.

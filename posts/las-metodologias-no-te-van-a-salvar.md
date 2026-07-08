@@ -1,6 +1,7 @@
 ---
 slug: las-metodologias-no-te-van-a-salvar
 title: Las metodologías no te van a salvar
+category: startups
 date: mar 2026
 order: 4
 excerpt: Las metodologías son herramientas, no religiones.

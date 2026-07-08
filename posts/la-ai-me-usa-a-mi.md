@@ -1,6 +1,7 @@
 ---
 slug: la-ai-me-usa-a-mi
 title: Últimamente siento que la AI me usa a mí
+category: ai
 date: mar 2026
 order: 6
 excerpt: Mi valor ya no es saber hacer. Es saber qué hacer.

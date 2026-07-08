@@ -1,6 +1,7 @@
 ---
 slug: ley-de-brooks
 title: La Ley de Brooks
+category: startups
 date: abr 2026
 order: 1
 excerpt: Tu instinto dice: mete más gente. Probablemente eso lo va a empeorar.

@@ -1,6 +1,7 @@
 ---
 slug: ai-companero-de-trabajo
 title: AI ya no es una herramienta. Es tu compañero de trabajo
+category: ai
 date: abr 2026
 order: 2
 excerpt: Lo que más me interesa no es la tecnología. Es lo que viene después.

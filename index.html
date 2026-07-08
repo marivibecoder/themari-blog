@@ -171,6 +171,25 @@ ul.plain .arrow { color: var(--yellow-text); flex: none; font-weight: 500; }
 .page-head h1 { font-size: clamp(38px, 6vw, 52px); margin: 0; line-height: 1.1; }
 .page-head p { color: var(--soft); max-width: 52ch; margin: 0; }
 
+.filters { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.fbtn {
+  border: none; cursor: pointer; padding: 6px 14px 8px;
+  font-family: 'Roboto Mono', monospace; font-size: 12px; color: var(--ink);
+  background: var(--keycap); border-radius: 5px;
+  box-shadow: 0 3px 0 var(--keycap-edge);
+  transition: transform .06s ease, box-shadow .06s ease;
+}
+.fbtn:hover { transform: translateY(-1px); }
+.fbtn.active {
+  background: var(--yellow); color: #1A1A1A; transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--yellow-dark);
+}
+.entry .cat {
+  display: inline-block; margin-left: 10px; font-size: 10px; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--soft);
+  border: 1.5px solid var(--divider); border-radius: 4px; padding: 1px 7px 2px;
+}
+@media (min-width: 701px) { .entry .cat { display: block; margin: 6px 0 0; width: fit-content; } }
 .entries { margin-top: 30px; }
 .entry { display: grid; grid-template-columns: 130px 1fr; gap: 4px 36px; padding: 28px 0; border-bottom: 1.5px solid var(--divider); }
 .entry:first-child { border-top: 1.5px solid var(--divider); }
@@ -318,101 +337,109 @@ footer .sub { color: var(--soft); font-size: 13.5px; margin: 0 0 18px; }
       <h1 class="hand" data-i18n="blog.h">the blog</h1>
       <p data-i18n="blog.sub">what I write on LinkedIn, saved where the algorithm cannot bury it. all in Spanish for now.</p>
     </div>
+    <div class="filters" role="group" aria-label="filter by category">
+      <button class="fbtn active" data-filter="*" data-i18n="blog.all">all</button>
+      <button class="fbtn" data-filter="startups">startups</button>
+      <button class="fbtn" data-filter="chief of staff">chief of staff</button>
+      <button class="fbtn" data-filter="ai">ai</button>
+      <button class="fbtn" data-filter="carrera">carrera</button>
+      <button class="fbtn" data-filter="mindset">mindset</button>
+    </div>
     <div class="entries">
       <!-- POSTS:START -->
-      <article class="entry">
-        <div class="meta">abr 2026</div>
+      <article class="entry" data-cat="startups">
+        <div class="meta">abr 2026<span class="cat">startups</span></div>
         <div>
           <h3 class="hand"><a href="/blog/ley-de-brooks">La Ley de Brooks</a></h3>
           <p>Tu instinto dice: mete más gente. Probablemente eso lo va a empeorar.</p>
         </div>
       </article>
-      <article class="entry">
-        <div class="meta">abr 2026</div>
+      <article class="entry" data-cat="ai">
+        <div class="meta">abr 2026<span class="cat">ai</span></div>
         <div>
           <h3 class="hand"><a href="/blog/ai-companero-de-trabajo">AI ya no es una herramienta. Es tu compañero de trabajo</a></h3>
           <p>Lo que más me interesa no es la tecnología. Es lo que viene después.</p>
         </div>
       </article>
-      <article class="entry">
-        <div class="meta">abr 2026</div>
+      <article class="entry" data-cat="startups">
+        <div class="meta">abr 2026<span class="cat">startups</span></div>
         <div>
           <h3 class="hand"><a href="/blog/la-mandala-de-la-comunicacion">La mandala de la comunicación</a></h3>
           <p>Con 10 personas tienes 45 canales de comunicación posibles. Con 90? Más de 4,000.</p>
         </div>
       </article>
-      <article class="entry">
-        <div class="meta">mar 2026</div>
+      <article class="entry" data-cat="startups">
+        <div class="meta">mar 2026<span class="cat">startups</span></div>
         <div>
           <h3 class="hand"><a href="/blog/las-metodologias-no-te-van-a-salvar">Las metodologías no te van a salvar</a></h3>
           <p>Las metodologías son herramientas, no religiones.</p>
         </div>
       </article>
-      <article class="entry">
-        <div class="meta">mar 2026</div>
+      <article class="entry" data-cat="mindset">
+        <div class="meta">mar 2026<span class="cat">mindset</span></div>
         <div>
           <h3 class="hand"><a href="/blog/omitir-intro">Trabajar remoto te enseña a omitir intro</a></h3>
           <p>Remote no es frío. Frío es trabajar en una oficina rodeada de gente y no conocer a nadie.</p>
         </div>
       </article>
-      <article class="entry">
-        <div class="meta">mar 2026</div>
+      <article class="entry" data-cat="ai">
+        <div class="meta">mar 2026<span class="cat">ai</span></div>
         <div>
           <h3 class="hand"><a href="/blog/la-ai-me-usa-a-mi">Últimamente siento que la AI me usa a mí</a></h3>
           <p>Mi valor ya no es saber hacer. Es saber qué hacer.</p>
         </div>
       </article>
-      <article class="entry">
-        <div class="meta">mar 2026</div>
+      <article class="entry" data-cat="mindset">
+        <div class="meta">mar 2026<span class="cat">mindset</span></div>
         <div>
           <h3 class="hand"><a href="/blog/let-them">Let them</a></h3>
           <p>Cuantas decisiones has dejado de tomar por miedo a lo que van a pensar los demás?</p>
         </div>
       </article>
-      <article class="entry">
-        <div class="meta">mar 2026</div>
+      <article class="entry" data-cat="carrera">
+        <div class="meta">mar 2026<span class="cat">carrera</span></div>
         <div>
           <h3 class="hand"><a href="/blog/carrera-zigzag">Operations → Product → Operations → Chief of Staff</a></h3>
           <p>Si tu carrera tampoco tiene sentido lineal, tal vez no es un bug. Es una feature.</p>
         </div>
       </article>
-      <article class="entry">
-        <div class="meta">feb 2026</div>
+      <article class="entry" data-cat="mindset">
+        <div class="meta">feb 2026<span class="cat">mindset</span></div>
         <div>
           <h3 class="hand"><a href="/blog/el-foco-real">El foco real es saber qué ignorar</a></h3>
           <p>Como haces foco cuando todo es urgente? Plot twist: no lo haces.</p>
         </div>
       </article>
-      <article class="entry">
-        <div class="meta">feb 2026</div>
+      <article class="entry" data-cat="chief of staff">
+        <div class="meta">feb 2026<span class="cat">chief of staff</span></div>
         <div>
           <h3 class="hand"><a href="/blog/el-superpoder-del-chief-of-staff">El Chief of Staff no tiene poder</a></h3>
           <p>Nadie te reporta. Pero tienes que lograr que toda la empresa se mueva.</p>
         </div>
       </article>
-      <article class="entry">
-        <div class="meta">nov 2025</div>
+      <article class="entry" data-cat="carrera">
+        <div class="meta">nov 2025<span class="cat">carrera</span></div>
         <div>
           <h3 class="hand"><a href="/blog/trabajar-y-estudiar">Trabajar full time y estudiar: DOs y DON&#x27;Ts</a></h3>
           <p>No hay carrera que ganar. Solo un camino que recorrer.</p>
         </div>
       </article>
-      <article class="entry">
-        <div class="meta">oct 2025</div>
+      <article class="entry" data-cat="startups">
+        <div class="meta">oct 2025<span class="cat">startups</span></div>
         <div>
           <h3 class="hand"><a href="/blog/demos-en-vivo">Demo del producto LIVE o nada</a></h3>
           <p>Me encantan las demos en vivo, incluso si fallan.</p>
         </div>
       </article>
-      <article class="entry">
-        <div class="meta">sep 2025</div>
+      <article class="entry" data-cat="chief of staff">
+        <div class="meta">sep 2025<span class="cat">chief of staff</span></div>
         <div>
           <h3 class="hand"><a href="/blog/que-carajo-hace-un-chief-of-staff">Qué carajo hace un Chief of Staff?</a></h3>
           <p>Eres la persona que resuelve lo que nadie más puede (o quiere) resolver.</p>
         </div>
       </article>
-      <article class="entry">
-        <div class="meta">sep 2025</div>
+      <article class="entry" data-cat="carrera">
+        <div class="meta">sep 2025<span class="cat">carrera</span></div>
         <div>
           <h3 class="hand"><a href="/blog/empezar-a-trabajar-joven">La mejor carrera universitaria es empezar a trabajar</a></h3>
           <p>Me gradué del colegio a los 16 en Caracas y a los pocos meses ya estaba en Buenos Aires.</p>
@@ -558,6 +585,7 @@ const I18N = {
     'cur.i1': 'Chief of Staff at an AI startup',
     'cur.i2': 'vibecoding little tools at night',
     'blog.h': 'the blog', 'blog.sub': 'what I write on LinkedIn, saved where the algorithm cannot bury it. all in Spanish for now.',
+    'blog.all': 'all',
     'vibe.sub': "things I built with AI and stubbornness. I'm not an engineer, that's the whole point.",
     'vibe.loading': 'loading projects, no ETA.',
     'book.h': 'the bookshelf', 'book.sub': 'self-help, thrillers and a few classics. everything I have actually read, no decoration books.',
@@ -582,6 +610,7 @@ const I18N = {
     'cur.i1': 'Chief of Staff en una startup de AI',
     'cur.i2': 'vibecodeando herramientas de noche',
     'blog.h': 'el blog', 'blog.sub': 'lo que escribo en LinkedIn, guardado donde el algoritmo no lo puede enterrar.',
+    'blog.all': 'todos',
     'vibe.sub': 'cosas que construí con AI y terquedad. No soy ingeniera, ese es el punto.',
     'vibe.loading': 'cargando proyectos, sin ETA.',
     'book.h': 'la biblioteca', 'book.sub': 'self-help, thrillers y algunos clásicos. todo leído de verdad, cero libros de decoración.',
@@ -619,6 +648,15 @@ document.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', 
 let savedLang = null;
 try { savedLang = localStorage.getItem('lang'); } catch (e) {}
 setLang(savedLang || ((navigator.language || 'en').toLowerCase().startsWith('es') ? 'es' : 'en'));
+
+// blog category filters
+document.querySelectorAll('.fbtn').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.fbtn').forEach(x => x.classList.toggle('active', x === b));
+  const f = b.dataset.filter;
+  document.querySelectorAll('.entry[data-cat]').forEach(en => {
+    en.style.display = (f === '*' || en.dataset.cat === f) ? '' : 'none';
+  });
+}));
 
 // help bubble + doodle rain easter egg
 const helpKey = document.getElementById('helpKey');

@@ -1,6 +1,7 @@
 ---
 slug: la-mandala-de-la-comunicacion
 title: La mandala de la comunicación
+category: startups
 date: abr 2026
 order: 3
 excerpt: Con 10 personas tienes 45 canales de comunicación posibles. Con 90? Más de 4,000.

@@ -1,6 +1,7 @@
 ---
 slug: trabajar-y-estudiar
 title: Trabajar full time y estudiar: DOs y DON'Ts
+category: carrera
 date: nov 2025
 order: 11
 excerpt: No hay carrera que ganar. Solo un camino que recorrer.

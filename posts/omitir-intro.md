@@ -1,6 +1,7 @@
 ---
 slug: omitir-intro
 title: Trabajar remoto te enseña a omitir intro
+category: mindset
 date: mar 2026
 order: 5
 excerpt: Remote no es frío. Frío es trabajar en una oficina rodeada de gente y no conocer a nadie.

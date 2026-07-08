@@ -1,6 +1,7 @@
 ---
 slug: el-superpoder-del-chief-of-staff
 title: El Chief of Staff no tiene poder
+category: chief of staff
 date: feb 2026
 order: 10
 excerpt: Nadie te reporta. Pero tienes que lograr que toda la empresa se mueva.

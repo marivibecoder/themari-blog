@@ -1,6 +1,7 @@
 ---
 slug: demos-en-vivo
 title: Demo del producto LIVE o nada
+category: startups
 date: oct 2025
 order: 12
 excerpt: Me encantan las demos en vivo, incluso si fallan.

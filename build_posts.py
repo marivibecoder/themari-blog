@@ -55,7 +55,7 @@ a:focus-visible {{ outline: 2.5px solid var(--yellow-dark); outline-offset: 3px;
 <div class="wrap">
   <a class="back" href="/#blog">&larr; blog</a>
   <h1>{title}</h1>
-  <p class="meta">{date} · <span class="hl">publicado en LinkedIn</span></p>
+  <p class="meta">{date} · {category} · <span class="hl">publicado en LinkedIn</span></p>
   <article>
 {body}
   </article>
@@ -90,13 +90,17 @@ posts.sort(key=lambda x: x[0]["order"])
 
 os.makedirs("blog", exist_ok=True)
 for meta, body in posts:
-    page = TEMPLATE.format(title=html.escape(meta["title"]), date=meta["date"], body=body_html(body))
+    page = TEMPLATE.format(
+        title=html.escape(meta["title"]), date=meta["date"],
+        category=meta.get("category", ""), body=body_html(body),
+    )
     open(f"blog/{meta['slug']}.html", "w").write(page)
 
 cards = []
 for meta, _ in posts:
-    cards.append(f"""      <article class="entry">
-        <div class="meta">{meta['date']}</div>
+    cat = meta.get("category", "")
+    cards.append(f"""      <article class="entry" data-cat="{cat}">
+        <div class="meta">{meta['date']}<span class="cat">{cat}</span></div>
         <div>
           <h3 class="hand"><a href="/blog/{meta['slug']}">{html.escape(meta['title'])}</a></h3>
           <p>{html.escape(meta['excerpt'])}</p>

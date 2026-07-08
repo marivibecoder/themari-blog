@@ -1,6 +1,7 @@
 ---
 slug: el-foco-real
 title: El foco real es saber qué ignorar
+category: mindset
 date: feb 2026
 order: 9
 excerpt: Como haces foco cuando todo es urgente? Plot twist: no lo haces.
