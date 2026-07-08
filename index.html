@@ -188,6 +188,23 @@ ul.plain .arrow { color: var(--yellow-text); flex: none; font-weight: 500; }
 }
 .chip.yellow { background: var(--yellow); color: #1A1A1A; box-shadow: 0 3px 0 var(--yellow-dark); }
 
+/* ---------- coming soon (vibecoded) ---------- */
+.soon-wrap { text-align: center; padding: 76px 0 40px; color: var(--ink); }
+.soon-title { font-family: 'Gochi Hand', cursive; font-size: clamp(36px, 6vw, 48px); margin: 0 0 30px; transform: rotate(-1deg); }
+.loading-bar { width: 340px; max-width: 86%; height: auto; }
+.loading-bar .scribble {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: scribble-fill 2.8s ease-in-out infinite;
+}
+@keyframes scribble-fill {
+  0% { stroke-dashoffset: 100; }
+  70% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .loading-bar .scribble { animation: none; stroke-dashoffset: 40; } }
+.soon-sub { color: var(--soft); font-size: 13.5px; margin: 18px 0 0; }
+
 /* ---------- bookshelf ---------- */
 .shelves { display: flex; flex-direction: column; gap: 36px; margin-top: 44px; }
 .shelf { display: flex; align-items: flex-end; justify-content: flex-start; gap: 10px; margin: 0 0 0 6px; flex-wrap: wrap; color: var(--ink); }
@@ -319,28 +336,16 @@ footer .sub { color: var(--soft); font-size: 13.5px; margin: 0 0 18px; }
       <h1 class="hand">vibecoded</h1>
       <p data-i18n="vibe.sub">things I built with AI and stubbornness. I'm not an engineer, that's the whole point.</p>
     </div>
-    <div class="entries">
-      <article class="entry">
-        <div class="meta"><span class="chip yellow">shipped</span></div>
-        <div>
-          <h3 class="hand">customer ops dashboard</h3>
-          <p data-i18n="vibe.p1d">a dashboard to keep track of customers at work. built at night, used every day.</p>
-        </div>
-      </article>
-      <article class="entry">
-        <div class="meta"><span class="chip yellow">shipped</span></div>
-        <div>
-          <h3 class="hand">whatsapp group monitor</h3>
-          <p data-i18n="vibe.p2d">a little agent that reads WhatsApp groups and writes me a daily report. it never gets tired. I do.</p>
-        </div>
-      </article>
-      <article class="entry">
-        <div class="meta"><span class="chip">always wip</span></div>
-        <div>
-          <h3 class="hand" data-i18n="vibe.p3t">this website</h3>
-          <p data-i18n="vibe.p3d">vibecoded with Claude, obviously. the handwriting is fake but the opinions are real.</p>
-        </div>
-      </article>
+    <div class="soon-wrap">
+      <p class="soon-title hand">coming soon</p>
+      <svg class="loading-bar" viewBox="0 0 340 46" role="img" aria-label="loading">
+        <path d="M6 10 C 90 5, 250 7, 334 11 C 337 20, 336 30, 333 38 C 240 42, 95 41, 7 37 C 4 28, 4 18, 6 10 Z"
+          fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        <path class="scribble" pathLength="100"
+          d="M14 34 L24 13 L32 34 L42 13 L50 34 L60 13 L68 34 L78 13 L86 34 L96 13 L104 34 L114 13 L122 34 L132 13 L140 34 L150 13 L158 34 L168 13 L176 34 L186 13 L194 34"
+          fill="none" stroke="var(--yellow)" stroke-width="9" stroke-linecap="round"/>
+      </svg>
+      <p class="soon-sub" data-i18n="vibe.loading">loading projects, no ETA.</p>
     </div>
   </section>
 
@@ -459,10 +464,7 @@ const I18N = {
     'blog.p2d': 'The best is yet to come.',
     'blog.soon': 'soon', 'blog.p3t': 'next post loading', 'blog.p3d': 'no promises on the date.',
     'vibe.sub': "things I built with AI and stubbornness. I'm not an engineer, that's the whole point.",
-    'vibe.p1d': 'a dashboard to keep track of customers at work. built at night, used every day.',
-    'vibe.p2d': 'a little agent that reads WhatsApp groups and writes me a daily report. it never gets tired. I do.',
-    'vibe.p3t': 'this website',
-    'vibe.p3d': 'vibecoded with Claude, obviously. the handwriting is fake but the opinions are real.',
+    'vibe.loading': 'loading projects, no ETA.',
     'book.h': 'the bookshelf', 'book.sub': 'self-help, thrillers and a few classics. everything I have actually read, no decoration books.',
     'book.ghost': 'next read?',
     'foot.padH': 'leave a doodle',
@@ -488,10 +490,7 @@ const I18N = {
     'blog.p2d': 'Lo mejor está por venir.',
     'blog.soon': 'pronto', 'blog.p3t': 'siguiente post cargando', 'blog.p3d': 'sin promesas de fecha.',
     'vibe.sub': 'cosas que construí con AI y terquedad. No soy ingeniera, ese es el punto.',
-    'vibe.p1d': 'un dashboard para seguir a los clientes del trabajo. hecho de noche, usado todos los días.',
-    'vibe.p2d': 'un agente que lee grupos de WhatsApp y me escribe un reporte diario. nunca se cansa. yo sí.',
-    'vibe.p3t': 'este sitio',
-    'vibe.p3d': 'vibecodeado con Claude, obviamente. la letra a mano es falsa pero las opiniones son reales.',
+    'vibe.loading': 'cargando proyectos, sin ETA.',
     'book.h': 'la biblioteca', 'book.sub': 'self-help, thrillers y algunos clásicos. todo leído de verdad, cero libros de decoración.',
     'book.ghost': 'próxima lectura?',
     'foot.padH': 'deja un doodle',
