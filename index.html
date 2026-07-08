@@ -181,6 +181,29 @@ ul.plain { list-style: none; padding: 0; margin: 0; }
 ul.plain li { display: flex; gap: 12px; align-items: baseline; margin-bottom: 10px; }
 ul.plain .arrow { color: var(--yellow-text); flex: none; font-weight: 500; }
 
+/* ---------- ascii portrait + whoami ---------- */
+.about-deep { display: grid; grid-template-columns: 1.25fr 1fr; gap: 44px 60px; margin-top: 80px; align-items: stretch; }
+@media (max-width: 760px) { .about-deep { grid-template-columns: 1fr; } }
+.portrait-box, .whoami { position: relative; padding: 30px 32px; }
+.portrait-box { text-align: center; }
+pre.ascii {
+  margin: 0; overflow: hidden; text-align: left; display: inline-block;
+  font-family: 'Roboto Mono', ui-monospace, monospace;
+  font-size: clamp(3.6px, 0.62vw, 6.5px); line-height: 1.08; letter-spacing: 0;
+  color: var(--ink);
+}
+.ascii-dark { display: none; }
+@media (prefers-color-scheme: dark) { .ascii-light { display: none; } .ascii-dark { display: inline-block; } }
+:root[data-theme="light"] .ascii-light { display: inline-block; }
+:root[data-theme="light"] .ascii-dark { display: none; }
+:root[data-theme="dark"] .ascii-light { display: none; }
+:root[data-theme="dark"] .ascii-dark { display: inline-block; }
+.portrait-cap { margin: 14px 0 0; color: var(--soft); font-size: 12px; }
+.whoami { font-size: 13.5px; display: flex; align-items: center; }
+.whoami dl { margin: 0; display: grid; grid-template-columns: 88px 1fr; gap: 12px 18px; width: 100%; }
+.whoami dt { color: var(--yellow-text); }
+.whoami dd { margin: 0; }
+
 /* ---------- inner pages ---------- */
 .page-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px 40px; flex-wrap: wrap; padding: 44px 0 6px; }
 .page-head h1 { font-size: clamp(38px, 6vw, 52px); margin: 0; line-height: 1.1; }
@@ -342,6 +365,118 @@ footer .sub { color: var(--soft); font-size: 13.5px; margin: 0 0 18px; }
           </ul>
         </aside>
       </div>
+
+      <div class="about-deep">
+        <div class="portrait-box">
+          <svg class="sketch-frame" viewBox="0 0 400 300" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M12 14 C 110 8, 300 10, 390 16 C 396 90, 394 210, 388 286 C 290 294, 105 292, 13 285 C 7 205, 8 88, 12 14 Z"
+              fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+          </svg>
+          <pre class="ascii ascii-light" aria-label="ascii portrait">                                                                                        
+                                                                                        
+                                                                                        
+                                     ..--=++++==-:.                                     
+                                 .-+#%@@@@@@@@@@@@@#*-.                                 
+                              .-#@@@@@@@@@@@@@@@@@@@@@@#=.                              
+                            .=%@@@@@@@@@@@@@@@@@@@@@@@@@@%+.                            
+                           -%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%=                           
+                          +@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*.                         
+                         +@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*.                        
+                        =@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+                        
+                       .%@@@@@@@@@@@@@@#+=----=+#%@@@@@@@@@@@@@@:                       
+                       -@@@@@@@@@@@@%+-:::::::::::=#@@@@@@@@@@@@+                       
+                       =@@@@@@@@@@@*::::::::::::::::+@@@@@@@@@@@*                       
+                       =@@@@@@@@@@=::::::::::::::::::=%@@@@@@@@@*                       
+                       =@@@@@@@@@+:::-====::::-===-:::=@@@@@@@@@*                       
+                       =@@@@@@@@#::::::-::::::::-::::::*@@@@@@@@*                       
+                       =@@@@@@@@+:::::*%%=::::-#%#-::::=@@@@@@@@*                       
+                       =@@@@@@@@-:::::+#*-::::-+#+-::::-%@@@@@@@*                       
+                       =@@@@@@@@-::::::::::::::::::::::-%@@@@@@@*                       
+                       =@@@@@@@@=::::::::::::::::::::::-@@@@@@@@*                       
+                       =@@@@@@@@+::::::::::::::::::::::-@@@@@@@@*                       
+                       =@@@@@@@@+:::::::-::::::-:::::::=@@@@@@@@*                       
+                       =@@@@@@@@+:::::::=+====+=:::::::=@@@@@@@@*                       
+                       =@@@@@@@@+:::::::::----:::::::::=@@@@@@@@*                       
+                       =@@@@@@@@=::::::::::::::::::::::-%@@@@@@@*                       
+                       .:::::::.  .::::::::::::::::::.  .:::::::.                       
+                                     ..:::::::::::.                                     
+                                       ----------.                                      
+                              .........----------:........                              
+                         :=*#%%%%%%%%@%=--------=#@%%%%%@%%#*=:.                        
+                      :+%@@@@@@@@@@@@@@+=========%@@@@@@@@@@@@@%+:                      
+                    .+@@@@@@@@@@@@@@@@@@%%%%%%%%@@@@@@@@@@@@@@@@@@*:                    
+                   :%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%-                   
+                  :%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-                  
+                  *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#.                 
+                 .%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@:                 
+                 .%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@:                 
+                  *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#                  
+                  :%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-                  
+                   :%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-                   
+                    .*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#:                    
+                      :+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%*-                      
+                         -+#%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%#+-.                        </pre>
+          <pre class="ascii ascii-dark" aria-hidden="true">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%#**+====++*#%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%*=:.             :-*%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%*:                      :+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@%+.                          .=%@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@*.                              .+@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@=                                  -%@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@=                                    -%@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@+                                      =@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@%.              :=+****+=:.              #@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@*            .=*###########+:            =@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@+           -################=           -@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@+          +##################+.         -@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@+         =###*++++####*+++*###+         -@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@+        :######*########*######-        -@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@+        =#####-..+####*: :*####+        -@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@+        *#####=:-*####*=:=*####*.       -@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@+        *######################*.       -@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@+        +######################*        -@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@+        =######################*        -@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@+        =#######*######*#######+        -@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@+        =#######+=++++=+#######+        -@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@+        =#########****#########+        -@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@+        +######################*.       -@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@%#######%@@%##################%@@%#######%@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%#*#########%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@**********%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%%%%%**********#%%%%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@#+-:..       .+********+:       ..:-+#%@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@#=.              =+++++++++.             .=#@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@%=                                            -#@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@#.                                              .*@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@#.                                                 *@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@-                                                  :%@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@%.                                                   #@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@%.                                                   #@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@-                                                  :@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@#.                                                 *@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@#.                                               *@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@%-                                            :#@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@#=.                                      .-*@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@*=:.                               :=*%@@@@@@@@@@@@@@@@@@@@@@@@</pre>
+          <p class="portrait-cap" data-i18n="who.cap">(demo portrait, the real photo goes here)</p>
+        </div>
+        <div class="whoami">
+          <svg class="sketch-frame" viewBox="0 0 400 300" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M14 16 C 120 10, 290 12, 388 18 C 393 95, 392 205, 387 284 C 280 292, 110 290, 14 284 C 9 200, 10 92, 14 16 Z"
+              fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+          </svg>
+          <dl>
+            <dt>name</dt><dd>Mariana Flores</dd>
+            <dt>role</dt><dd>Chief of Staff @ Darwin AI</dd>
+            <dt>based</dt><dd>Buenos Aires, AR</dd>
+            <dt>from</dt><dd>Caracas, VE</dd>
+            <dt>writes</dt><dd data-i18n="who.writes">here and on LinkedIn, in Spanish</dd>
+            <dt>socials</dt><dd data-i18n="who.soon">coming soon</dd>
+          </dl>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -498,6 +633,9 @@ const I18N = {
     'hero.intro': 'Venezuelan living in Buenos Aires, working in tech since I was a teenager (operations, not code). I write things down before I forget them. Explore at your own risk.',
     'hero.cta': 'Read the blog',
     'hero.hint': 'tip: press <kbd>a</kbd> <kbd>b</kbd> <kbd>v</kbd> <kbd>k</kbd> <kbd>f</kbd> to jump around',
+    'who.writes': 'here and on LinkedIn, in Spanish',
+    'who.soon': 'coming soon',
+    'who.cap': '(demo portrait, the real photo goes here)',
     'cur.h': 'currently',
     'cur.i1': 'Chief of Staff at an AI startup',
     'cur.i2': 'vibecoding little tools at night',
@@ -523,6 +661,9 @@ const I18N = {
     'hero.intro': 'Venezolana viviendo en Buenos Aires, en tech desde adolescente (operaciones, no código). Escribo las cosas antes de que se me olviden. Explora bajo tu propio riesgo.',
     'hero.cta': 'Leer el blog',
     'hero.hint': 'tip: presiona <kbd>a</kbd> <kbd>b</kbd> <kbd>v</kbd> <kbd>k</kbd> <kbd>f</kbd> para saltar entre secciones',
+    'who.writes': 'aquí y en LinkedIn, en español',
+    'who.soon': 'pronto',
+    'who.cap': '(retrato demo, acá va la foto real)',
     'cur.h': 'ahora mismo',
     'cur.i1': 'Chief of Staff en una startup de AI',
     'cur.i2': 'vibecodeando herramientas de noche',
