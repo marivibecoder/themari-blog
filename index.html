@@ -189,24 +189,25 @@ ul.plain .arrow { color: var(--yellow-text); flex: none; font-weight: 500; }
 .chip.yellow { background: var(--yellow); color: #1A1A1A; box-shadow: 0 3px 0 var(--yellow-dark); }
 
 /* ---------- bookshelf ---------- */
-.shelf-wrap { display: grid; grid-template-columns: auto 1fr; gap: 50px 80px; align-items: center; margin-top: 44px; }
-@media (max-width: 760px) { .shelf-wrap { grid-template-columns: 1fr; gap: 40px; } }
-.shelf { display: flex; align-items: flex-end; justify-content: flex-start; gap: 12px; margin: 0; flex-wrap: wrap; color: var(--ink); }
+.shelves { display: flex; flex-direction: column; gap: 36px; margin-top: 44px; }
+.shelf { display: flex; align-items: flex-end; justify-content: flex-start; gap: 10px; margin: 0 0 0 6px; flex-wrap: wrap; color: var(--ink); }
 .book {
-  writing-mode: vertical-rl; font-family: 'Gochi Hand', cursive; font-size: 19px;
-  padding: 18px 10px; min-height: 178px; background: var(--paper); color: var(--ink);
+  writing-mode: vertical-rl; font-family: 'Gochi Hand', cursive; font-size: 17.5px;
+  line-height: 1.2; padding: 14px 8px; min-height: 150px; max-height: 215px;
+  background: var(--paper); color: var(--ink);
   border: 2px solid var(--ink); border-radius: 4px;
   display: flex; align-items: center; justify-content: center;
   transition: transform .12s ease;
 }
 .book:hover { transform: translateY(-8px); }
-.book.lean { transform: rotate(3deg); min-height: 160px; }
+.book.t { min-height: 195px; }
+.book.m { min-height: 172px; }
+.book.lean { transform: rotate(3deg); }
 .book.lean:hover { transform: rotate(3deg) translateY(-8px); }
-.book.fill { background: var(--yellow); color: #1A1A1A; min-height: 192px; }
-.book.ghost { background: transparent; border-style: dashed; border-color: var(--soft); color: var(--soft); min-height: 150px; }
+.book.fill { background: var(--yellow); color: #1A1A1A; }
+.book.gray { background: var(--keycap); border-color: var(--ink); }
+.book.ghost { background: transparent; border-style: dashed; border-color: var(--soft); color: var(--soft); }
 .shelf-base { margin: 0; border-bottom: 2px solid var(--ink); border-radius: 2px; }
-.book-notes { max-width: 490px; margin: 0; }
-.book-notes .hand { font-size: 20px; }
 @media (prefers-reduced-motion: reduce) { .book, .book:hover { transition: none; transform: none; } }
 
 /* ---------- footer ---------- */
@@ -347,24 +348,45 @@ footer .sub { color: var(--soft); font-size: 13.5px; margin: 0 0 18px; }
   <section class="panel" id="bookshelf" role="tabpanel">
     <div class="page-head">
       <h1 class="hand" data-i18n="book.h">the bookshelf</h1>
-      <p data-i18n="book.sub">mostly self-help, plus one novel that destroyed me. the shelf grows.</p>
+      <p data-i18n="book.sub">self-help, thrillers and a few classics. everything I have actually read, no decoration books.</p>
     </div>
-    <div class="shelf-wrap">
-      <div class="shelf-col">
+    <div class="shelves">
+      <div class="shelf-row">
         <div class="shelf">
-          <div class="book">A Little Life</div>
-          <div class="book fill">The Let Them Theory</div>
-          <div class="book lean">The 5 Second Rule</div>
-          <div class="book ghost" data-i18n="book.ghost">next read?</div>
+          <div class="book fill t">Atomic Habits</div>
+          <div class="book m">The Subtle Art of Not Giving a F*ck</div>
+          <div class="book">The Almanack of Naval Ravikant</div>
+          <div class="book fill lean">The Let Them Theory</div>
+          <div class="book t">The 4-Hour Body</div>
+          <div class="book m">Sprint</div>
+          <div class="book gray">Jobs to be Done</div>
+          <div class="book m">El hombre más rico de Babilonia</div>
         </div>
         <div class="shelf-base"></div>
       </div>
-      <div class="book-notes">
-        <ul class="plain">
-          <li><span class="arrow">&gt;</span><span data-i18n-html="book.n1"><span class="hand">A Little Life</span>, do not read in public. you will cry.</span></li>
-          <li><span class="arrow">&gt;</span><span data-i18n-html="book.n2"><span class="hand">The Let Them Theory</span>, Mel Robbins. stop managing other people's opinions.</span></li>
-          <li><span class="arrow">&gt;</span><span data-i18n-html="book.n3"><span class="hand">The 5 Second Rule</span>, also Mel. count backwards, then just do the thing.</span></li>
-        </ul>
+      <div class="shelf-row">
+        <div class="shelf">
+          <div class="book t">The Housemaid</div>
+          <div class="book lean m">The Housemaid's Secret</div>
+          <div class="book">The Housemaid is Watching</div>
+          <div class="book fill m">The Hunger Games</div>
+          <div class="book t">Catching Fire</div>
+          <div class="book">Mockingjay</div>
+          <div class="book gray m">1984</div>
+        </div>
+        <div class="shelf-base"></div>
+      </div>
+      <div class="shelf-row">
+        <div class="shelf">
+          <div class="book m">I'm Glad My Mom Died</div>
+          <div class="book t">Sapiens</div>
+          <div class="book">La sonrisa de Mandela</div>
+          <div class="book lean m">Le Petit Prince</div>
+          <div class="book gray">La metamorfosis</div>
+          <div class="book m">Sadako y las Mil Grullas de Papel</div>
+          <div class="book ghost" data-i18n="book.ghost">next read?</div>
+        </div>
+        <div class="shelf-base"></div>
       </div>
     </div>
   </section>
@@ -441,11 +463,8 @@ const I18N = {
     'vibe.p2d': 'a little agent that reads WhatsApp groups and writes me a daily report. it never gets tired. I do.',
     'vibe.p3t': 'this website',
     'vibe.p3d': 'vibecoded with Claude, obviously. the handwriting is fake but the opinions are real.',
-    'book.h': 'the bookshelf', 'book.sub': 'mostly self-help, plus one novel that destroyed me. the shelf grows.',
+    'book.h': 'the bookshelf', 'book.sub': 'self-help, thrillers and a few classics. everything I have actually read, no decoration books.',
     'book.ghost': 'next read?',
-    'book.n1': '<span class="hand">A Little Life</span>, do not read in public. you will cry.',
-    'book.n2': '<span class="hand">The Let Them Theory</span>, Mel Robbins. stop managing other people\'s opinions.',
-    'book.n3': '<span class="hand">The 5 Second Rule</span>, also Mel. count backwards, then just do the thing.',
     'foot.padH': 'leave a doodle',
     'foot.padSub': "draw something. it stays between us (literally, it's not saved).",
     'foot.erase': 'Erase',
@@ -473,11 +492,8 @@ const I18N = {
     'vibe.p2d': 'un agente que lee grupos de WhatsApp y me escribe un reporte diario. nunca se cansa. yo sí.',
     'vibe.p3t': 'este sitio',
     'vibe.p3d': 'vibecodeado con Claude, obviamente. la letra a mano es falsa pero las opiniones son reales.',
-    'book.h': 'la biblioteca', 'book.sub': 'self-help en su mayoría, más una novela que me destruyó. la estantería crece.',
+    'book.h': 'la biblioteca', 'book.sub': 'self-help, thrillers y algunos clásicos. todo leído de verdad, cero libros de decoración.',
     'book.ghost': 'próxima lectura?',
-    'book.n1': '<span class="hand">A Little Life</span>, no lo leas en público. vas a llorar.',
-    'book.n2': '<span class="hand">The Let Them Theory</span>, Mel Robbins. deja de manejar las opiniones de los demás.',
-    'book.n3': '<span class="hand">The 5 Second Rule</span>, también de Mel. cuenta hacia atrás y haz la cosa.',
     'foot.padH': 'deja un doodle',
     'foot.padSub': 'dibuja algo. queda entre nosotros (literal, no se guarda).',
     'foot.erase': 'Borrar',
