@@ -1,0 +1,34 @@
+# themari.blog
+
+> Personal website and blog of Mariana Flores Guillén ("mari") — Chief of Staff at an AI startup, Venezuelan living in Buenos Aires, working in tech since she was a teenager (operations, not code). Short, direct blog posts written in Spanish about work, AI, careers, startups and mindset.
+
+The site UI is bilingual (English/Spanish); all blog posts are written in Spanish. Posts were originally published on LinkedIn and are archived here in full.
+
+## Blog posts (newest first)
+
+- [La Ley de Brooks](https://www.themari.blog/blog/ley-de-brooks): Tu instinto dice: mete más gente. Probablemente eso lo va a empeorar. (startups, 2026-04)
+- [AI ya no es una herramienta. Es tu compañero de trabajo](https://www.themari.blog/blog/ai-companero-de-trabajo): Lo que más me interesa no es la tecnología. Es lo que viene después. (ai, 2026-04)
+- [La mandala de la comunicación](https://www.themari.blog/blog/la-mandala-de-la-comunicacion): Con 10 personas tienes 45 canales de comunicación posibles. Con 90? Más de 4,000. (startups, 2026-04)
+- [Las metodologías no te van a salvar](https://www.themari.blog/blog/las-metodologias-no-te-van-a-salvar): Las metodologías son herramientas, no religiones. (startups, 2026-03)
+- [Trabajar remoto te enseña a omitir intro](https://www.themari.blog/blog/omitir-intro): Remote no es frío. Frío es trabajar en una oficina rodeada de gente y no conocer a nadie. (mindset, 2026-03)
+- [Últimamente siento que la AI me usa a mí](https://www.themari.blog/blog/la-ai-me-usa-a-mi): Mi valor ya no es saber hacer. Es saber qué hacer. (ai, 2026-03)
+- [Let them](https://www.themari.blog/blog/let-them): Cuantas decisiones has dejado de tomar por miedo a lo que van a pensar los demás? (mindset, 2026-03)
+- [Operations → Product → Operations → Chief of Staff](https://www.themari.blog/blog/carrera-zigzag): Si tu carrera tampoco tiene sentido lineal, tal vez no es un bug. Es una feature. (carrera, 2026-03)
+- [El foco real es saber qué ignorar](https://www.themari.blog/blog/el-foco-real): Como haces foco cuando todo es urgente? Plot twist: no lo haces. (mindset, 2026-02)
+- [El Chief of Staff no tiene poder](https://www.themari.blog/blog/el-superpoder-del-chief-of-staff): Nadie te reporta. Pero tienes que lograr que toda la empresa se mueva. (chief of staff, 2026-02)
+- [Trabajar full time y estudiar: DOs y DON'Ts](https://www.themari.blog/blog/trabajar-y-estudiar): No hay carrera que ganar. Solo un camino que recorrer. (carrera, 2025-11)
+- [Demo del producto LIVE o nada](https://www.themari.blog/blog/demos-en-vivo): Me encantan las demos en vivo, incluso si fallan. (startups, 2025-10)
+- [Qué carajo hace un Chief of Staff?](https://www.themari.blog/blog/que-carajo-hace-un-chief-of-staff): Eres la persona que resuelve lo que nadie más puede (o quiere) resolver. (chief of staff, 2025-09)
+- [La mejor carrera universitaria es empezar a trabajar](https://www.themari.blog/blog/empezar-a-trabajar-joven): Me gradué del colegio a los 16 en Caracas y a los pocos meses ya estaba en Buenos Aires. (carrera, 2025-09)
+
+## Site sections (single page)
+
+- [about](https://www.themari.blog/#about): who mari is and what she's up to now
+- [blog](https://www.themari.blog/#blog): the full post list
+- [vibecoded](https://www.themari.blog/#vibecoded): personal coding projects (coming soon)
+- [bookshelf](https://www.themari.blog/#bookshelf): the books on her shelf, in three themed rows
+
+## Contact
+
+- [LinkedIn](https://www.linkedin.com/in/mariana-flores-guillen/)
+- Email: mari@pacifg.com
